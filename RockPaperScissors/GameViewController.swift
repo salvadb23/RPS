@@ -10,6 +10,9 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBAction func cancelToGameViewController(_ segue: UIStoryboardSegue) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,9 +24,15 @@ class GameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as? ResultsViewController
         switch segue.identifier {
-        case "rockSelected":
+        case "rockSegue":
             vc?.userSelection = GameOption.rock
-        default:
+        case "paperSegue":
+            vc?.userSelection = GameOption.paper
+        case "scissorSegue":
+            vc?.userSelection = GameOption.scissors
+        case .none:
+            break
+        case .some(_):
             break
         }
     }

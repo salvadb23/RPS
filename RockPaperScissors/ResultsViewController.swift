@@ -14,6 +14,7 @@ class ResultsViewController: UIViewController {
     
     //TODO: Set up an outlet for the label
     
+    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultImage: UIImageView!
     
     override func viewDidLoad() {
@@ -29,6 +30,15 @@ class ResultsViewController: UIViewController {
         case .scissors:
             resultImage.image = UIImage(named: "scissors")
         }
+        print(userSelection)
+        print(randomOption.weakness)
+        
+        if userSelection == randomOption.weakness {
+            resultLabel.text = "WINNER"
+        } else {
+            resultLabel.text = "LOSER"
+        }
+
         
         //TODO: Depending on the result, show the legend "You won", "You lost", "It's a tie" in the label
 

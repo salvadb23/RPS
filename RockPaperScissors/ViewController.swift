@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBAction func cancelToViewController(_ segue: UIStoryboardSegue) {
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
